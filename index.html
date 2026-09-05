@@ -1,0 +1,2069 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="SkillSwap - Connect, Learn and Grow Together">
+
+    <title>SkillSwap | Connect. Learn. Grow Together.</title>
+
+    <style>
+
+        /* ================================
+           GLOBAL
+        ================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #168a4b;
+            --primary-dark: #086b36;
+            --primary-light: #e9f8ef;
+
+            --blue: #1976d2;
+            --dark: #172033;
+            --gray: #667085;
+            --light-gray: #f7f9f8;
+
+            --white: #ffffff;
+
+            --border: #dce9e1;
+
+            --shadow:
+                0 15px 40px rgba(20, 90, 55, 0.10);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            background: #ffffff;
+            color: var(--dark);
+
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+
+        /* ================================
+           NAVBAR
+        ================================= */
+
+        nav {
+            width: 100%;
+
+            position: fixed;
+            top: 0;
+            left: 0;
+
+            z-index: 999;
+
+            background:
+                rgba(255,255,255,0.92);
+
+            backdrop-filter:
+                blur(15px);
+
+            border-bottom:
+                1px solid #e7eee9;
+
+            padding:
+                15px 8%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content:
+                space-between;
+        }
+
+        .brand {
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            font-size: 24px;
+
+            font-weight: 800;
+
+            color: var(--primary-dark);
+        }
+
+        .brand-icon {
+
+            width: 42px;
+            height: 42px;
+
+            border-radius: 12px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #27ae60,
+                    #087a3e
+                );
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            color: white;
+
+            font-size: 20px;
+
+            box-shadow:
+                0 6px 15px
+                rgba(0,120,60,0.25);
+        }
+
+        .nav-links {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 28px;
+        }
+
+        .nav-links a {
+
+            color: #44505f;
+
+            font-weight: 600;
+
+            font-size: 15px;
+
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-download {
+
+            background: var(--primary);
+
+            color: white !important;
+
+            padding:
+                12px 20px;
+
+            border-radius: 10px;
+
+            box-shadow:
+                0 8px 20px
+                rgba(22,138,75,0.25);
+        }
+
+        .nav-download:hover {
+
+            background:
+                var(--primary-dark);
+
+            transform:
+                translateY(-2px);
+        }
+
+
+        /* ================================
+           HERO
+        ================================= */
+
+        .hero {
+
+            min-height: 100vh;
+
+            padding:
+                150px 8% 90px;
+
+            display: flex;
+
+            align-items: center;
+
+            background:
+
+                radial-gradient(
+                    circle at 10% 20%,
+                    #dff7e8,
+                    transparent 30%
+                ),
+
+                radial-gradient(
+                    circle at 90% 80%,
+                    #d7f3e1,
+                    transparent 28%
+                ),
+
+                #ffffff;
+        }
+
+        .hero-container {
+
+            max-width: 1250px;
+
+            width: 100%;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                1.1fr 0.9fr;
+
+            align-items: center;
+
+            gap: 70px;
+        }
+
+        .hero-badge {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            padding:
+                10px 16px;
+
+            background:
+                var(--primary-light);
+
+            border:
+                1px solid #c9efd6;
+
+            border-radius: 30px;
+
+            color:
+                var(--primary-dark);
+
+            font-size: 14px;
+
+            font-weight: 700;
+
+            margin-bottom: 25px;
+        }
+
+        .hero h1 {
+
+            font-size:
+                clamp(45px, 6vw, 75px);
+
+            line-height: 1.08;
+
+            letter-spacing:
+                -2px;
+
+            margin-bottom: 25px;
+        }
+
+        .hero h1 span {
+            color: var(--primary);
+        }
+
+        .hero p {
+
+            font-size: 18px;
+
+            color: var(--gray);
+
+            line-height: 1.8;
+
+            max-width: 620px;
+
+            margin-bottom: 32px;
+        }
+
+        .hero-buttons {
+
+            display: flex;
+
+            gap: 15px;
+
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #1ca85b,
+                    #08783d
+                );
+
+            color: white;
+
+            padding:
+                17px 28px;
+
+            border-radius: 13px;
+
+            font-weight: 700;
+
+            font-size: 16px;
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            transition: 0.3s;
+
+            box-shadow:
+                0 15px 30px
+                rgba(20,140,70,0.25);
+        }
+
+        .btn-primary:hover {
+
+            transform:
+                translateY(-4px);
+
+            box-shadow:
+                0 20px 35px
+                rgba(20,140,70,0.30);
+        }
+
+        .btn-secondary {
+
+            padding:
+                15px 26px;
+
+            border:
+                2px solid #b8d9c4;
+
+            border-radius: 13px;
+
+            color:
+                var(--primary-dark);
+
+            font-weight: 700;
+
+            transition: 0.3s;
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-light);
+        }
+
+
+        /* ================================
+           HERO PHONE
+        ================================= */
+
+        .hero-phone-container {
+
+            display: flex;
+
+            justify-content: center;
+
+            position: relative;
+        }
+
+        .hero-phone-container::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 350px;
+            height: 350px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #c8f2d6,
+                    #eafaf0
+                );
+
+            border-radius: 50%;
+
+            filter: blur(20px);
+
+            z-index: 0;
+        }
+
+        .phone {
+
+            width: 270px;
+
+            border-radius: 38px;
+
+            padding: 8px;
+
+            background: #101418;
+
+            position: relative;
+
+            z-index: 2;
+
+            box-shadow:
+                0 30px 70px
+                rgba(0,0,0,0.25);
+        }
+
+        .phone img {
+
+            width: 100%;
+
+            display: block;
+
+            border-radius: 32px;
+        }
+
+
+        /* ================================
+           TRUST BAR
+        ================================= */
+
+        .trust-bar {
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #075c31,
+                    #0d8b4a
+                );
+
+            padding:
+                30px 8%;
+
+            color: white;
+        }
+
+        .trust-container {
+
+            max-width: 1100px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 20px;
+        }
+
+        .trust-item {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 10px;
+
+            font-weight: 600;
+        }
+
+        .trust-icon {
+            font-size: 25px;
+        }
+
+
+        /* ================================
+           SECTION TITLE
+        ================================= */
+
+        .section {
+
+            padding:
+                100px 8%;
+        }
+
+        .section-title {
+
+            text-align: center;
+
+            max-width: 750px;
+
+            margin:
+                auto auto 60px;
+        }
+
+        .section-title small {
+
+            color: var(--primary);
+
+            font-weight: 800;
+
+            text-transform: uppercase;
+
+            letter-spacing: 2px;
+        }
+
+        .section-title h2 {
+
+            font-size:
+                clamp(34px, 4vw, 50px);
+
+            margin:
+                15px 0;
+
+            color: var(--dark);
+        }
+
+        .section-title p {
+
+            color: var(--gray);
+
+            line-height: 1.7;
+
+            font-size: 17px;
+        }
+
+
+        /* ================================
+           FEATURES
+        ================================= */
+
+        .features {
+
+            background:
+                #f5fbf7;
+        }
+
+        .feature-grid {
+
+            max-width: 1200px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+        .feature-card {
+
+            background: white;
+
+            border:
+                1px solid var(--border);
+
+            border-radius: 22px;
+
+            padding: 30px;
+
+            transition: 0.3s;
+        }
+
+        .feature-card:hover {
+
+            transform:
+                translateY(-8px);
+
+            box-shadow:
+                var(--shadow);
+        }
+
+        .feature-icon {
+
+            width: 58px;
+            height: 58px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 17px;
+
+            background:
+                var(--primary-light);
+
+            font-size: 27px;
+
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+
+            font-size: 21px;
+
+            margin-bottom: 12px;
+        }
+
+        .feature-card p {
+
+            color: var(--gray);
+
+            line-height: 1.7;
+
+            font-size: 15px;
+        }
+
+
+        /* ================================
+           APP SCREENSHOTS
+        ================================= */
+
+        .screenshots {
+
+            background: white;
+
+            overflow: hidden;
+        }
+
+        .screenshots-container {
+
+            max-width: 1250px;
+
+            margin: auto;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: flex-start;
+
+            gap: 35px;
+
+            flex-wrap: wrap;
+        }
+
+        .screen-card {
+
+            width: 230px;
+
+            background: white;
+
+            border-radius: 25px;
+
+            padding: 8px;
+
+            border:
+                1px solid #d9e8de;
+
+            box-shadow:
+                0 20px 45px
+                rgba(20,80,50,0.12);
+
+            transition: 0.4s;
+        }
+
+        .screen-card:hover {
+
+            transform:
+                translateY(-15px)
+                scale(1.03);
+
+            box-shadow:
+                0 30px 60px
+                rgba(20,100,50,0.20);
+        }
+
+        .screen-card img {
+
+            width: 100%;
+
+            border-radius: 19px;
+
+            display: block;
+        }
+
+        .screen-card h3 {
+
+            text-align: center;
+
+            font-size: 17px;
+
+            padding:
+                15px 5px 8px;
+
+            color: var(--dark);
+        }
+
+        .screen-card p {
+
+            text-align: center;
+
+            font-size: 13px;
+
+            color: var(--gray);
+
+            padding:
+                0 10px 15px;
+
+            line-height: 1.5;
+        }
+
+
+        /* ================================
+           SAFETY SECTION
+        ================================= */
+
+        .safety-section {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #f2fbf5,
+                    #ffffff
+                );
+        }
+
+        .safety-container {
+
+            max-width: 1150px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 80px;
+
+            align-items: center;
+        }
+
+        .safety-image {
+
+            display: flex;
+
+            justify-content: center;
+        }
+
+        .safety-image img {
+
+            width: 270px;
+
+            border-radius: 30px;
+
+            box-shadow:
+                0 30px 70px
+                rgba(20,90,50,0.18);
+
+            border:
+                7px solid white;
+        }
+
+        .safety-content h2 {
+
+            font-size:
+                clamp(34px,4vw,50px);
+
+            margin-bottom: 20px;
+        }
+
+        .safety-content > p {
+
+            color: var(--gray);
+
+            line-height: 1.8;
+
+            margin-bottom: 25px;
+
+            font-size: 17px;
+        }
+
+        .safety-list {
+
+            list-style: none;
+        }
+
+        .safety-list li {
+
+            display: flex;
+
+            gap: 15px;
+
+            align-items: center;
+
+            margin: 18px 0;
+
+            font-weight: 600;
+        }
+
+        .check {
+
+            min-width: 30px;
+            height: 30px;
+
+            border-radius: 50%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            background:
+                var(--primary-light);
+
+            color:
+                var(--primary);
+
+            font-weight: bold;
+        }
+
+
+        /* ================================
+           HOW IT WORKS
+        ================================= */
+
+        .how-it-works {
+
+            background: white;
+        }
+
+        .steps {
+
+            max-width: 1050px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 30px;
+        }
+
+        .step {
+
+            text-align: center;
+
+            padding: 30px;
+        }
+
+        .step-number {
+
+            width: 65px;
+            height: 65px;
+
+            border-radius: 50%;
+
+            margin:
+                auto auto 20px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #20aa5b,
+                    #08723b
+                );
+
+            color: white;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 25px;
+
+            font-weight: bold;
+        }
+
+        .step h3 {
+
+            margin-bottom: 12px;
+
+            font-size: 21px;
+        }
+
+        .step p {
+
+            color: var(--gray);
+
+            line-height: 1.6;
+        }
+
+
+        /* ================================
+           DOWNLOAD
+        ================================= */
+
+        .download {
+
+            padding:
+                110px 8%;
+
+            text-align: center;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #075c31,
+                    #119451
+                );
+
+            color: white;
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+        .download::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 400px;
+            height: 400px;
+
+            background:
+                rgba(255,255,255,0.05);
+
+            border-radius: 50%;
+
+            top: -200px;
+
+            left: -100px;
+        }
+
+        .download::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 350px;
+            height: 350px;
+
+            background:
+                rgba(255,255,255,0.05);
+
+            border-radius: 50%;
+
+            bottom: -200px;
+
+            right: -100px;
+        }
+
+        .download-content {
+
+            position: relative;
+
+            z-index: 2;
+
+            max-width: 750px;
+
+            margin: auto;
+        }
+
+        .download h2 {
+
+            font-size:
+                clamp(38px,5vw,58px);
+
+            margin-bottom: 20px;
+        }
+
+        .download p {
+
+            font-size: 18px;
+
+            line-height: 1.7;
+
+            opacity: 0.9;
+        }
+
+        .download-button {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            margin-top: 35px;
+
+            padding:
+                20px 35px;
+
+            border-radius: 15px;
+
+            background: white;
+
+            color:
+                var(--primary-dark);
+
+            font-size: 18px;
+
+            font-weight: 800;
+
+            transition: 0.3s;
+
+            box-shadow:
+                0 15px 35px
+                rgba(0,0,0,0.2);
+        }
+
+        .download-button:hover {
+
+            transform:
+                translateY(-5px)
+                scale(1.03);
+        }
+
+        .apk-info {
+
+            margin-top: 20px;
+
+            font-size: 14px;
+
+            opacity: 0.75;
+        }
+
+
+        /* ================================
+           FOOTER
+        ================================= */
+
+        footer {
+
+            background: #101b16;
+
+            color: white;
+
+            text-align: center;
+
+            padding:
+                50px 20px;
+        }
+
+        .footer-brand {
+
+            font-size: 28px;
+
+            font-weight: 800;
+
+            color: #6ee7a2;
+
+            margin-bottom: 12px;
+        }
+
+        footer p {
+
+            color: #a6b5ac;
+
+            font-size: 14px;
+
+            margin: 8px 0;
+        }
+
+
+        /* ================================
+           RESPONSIVE
+        ================================= */
+
+        @media (max-width: 950px) {
+
+            .hero-container {
+
+                grid-template-columns: 1fr;
+
+                text-align: center;
+            }
+
+            .hero p {
+
+                margin-left: auto;
+
+                margin-right: auto;
+            }
+
+            .hero-buttons {
+
+                justify-content: center;
+            }
+
+            .hero-phone-container {
+
+                margin-top: 20px;
+            }
+
+            .feature-grid {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .safety-container {
+
+                grid-template-columns: 1fr;
+
+                text-align: center;
+            }
+
+            .safety-list li {
+
+                justify-content: center;
+
+                text-align: left;
+            }
+
+            .trust-container {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+        }
+
+
+        @media (max-width: 650px) {
+
+            nav {
+
+                padding:
+                    12px 5%;
+            }
+
+            .brand {
+
+                font-size: 19px;
+            }
+
+            .brand-icon {
+
+                width: 36px;
+                height: 36px;
+            }
+
+            .nav-links a:not(.nav-download) {
+
+                display: none;
+            }
+
+            .nav-download {
+
+                padding:
+                    9px 13px;
+
+                font-size: 12px;
+            }
+
+            .hero {
+
+                padding:
+                    120px 6% 70px;
+            }
+
+            .hero h1 {
+
+                letter-spacing: -1px;
+            }
+
+            .section {
+
+                padding:
+                    75px 6%;
+            }
+
+            .feature-grid {
+
+                grid-template-columns: 1fr;
+            }
+
+            .trust-container {
+
+                grid-template-columns: 1fr;
+
+                gap: 20px;
+            }
+
+            .steps {
+
+                grid-template-columns: 1fr;
+            }
+
+            .screen-card {
+
+                width: 260px;
+            }
+
+            .phone {
+
+                width: 250px;
+            }
+
+        }
+
+
+        /* ================================
+           SCROLL ANIMATION
+        ================================= */
+
+        .reveal {
+
+            opacity: 0;
+
+            transform:
+                translateY(40px);
+
+            transition:
+                all 0.8s ease;
+        }
+
+        .reveal.active {
+
+            opacity: 1;
+
+            transform:
+                translateY(0);
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+<!-- =================================
+     NAVBAR
+================================= -->
+
+<nav>
+
+    <div class="brand">
+
+        <div class="brand-icon">
+            ↔
+        </div>
+
+        SkillSwap
+
+    </div>
+
+
+    <div class="nav-links">
+
+        <a href="#features">
+            Features
+        </a>
+
+        <a href="#screens">
+            App Preview
+        </a>
+
+        <a href="#safety">
+            Safety
+        </a>
+
+        <a href="#download"
+           class="nav-download">
+
+            Download App
+
+        </a>
+
+    </div>
+
+</nav>
+
+
+
+<!-- =================================
+     HERO
+================================= -->
+
+<section class="hero">
+
+    <div class="hero-container">
+
+
+        <div class="hero-content">
+
+            <div class="hero-badge">
+
+                🛡️ Student-Focused Skill Sharing Platform
+
+            </div>
+
+
+            <h1>
+
+                Connect.<br>
+
+                <span>Learn. Grow Together.</span>
+
+            </h1>
+
+
+            <p>
+
+                SkillSwap helps students connect with each other,
+                exchange valuable skills, share knowledge and build
+                meaningful learning connections.
+
+            </p>
+
+
+            <div class="hero-buttons">
+
+                <a
+                href="https://github.com/ramachandranragu87-dev/skillswap/releases/download/v1.0/app-release.apk"
+                class="btn-primary">
+
+                    📥 Download SkillSwap
+
+                </a>
+
+
+                <a href="#screens"
+                   class="btn-secondary">
+
+                    Explore App
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- SPLASH SCREEN -->
+
+        <div class="hero-phone-container">
+
+            <div class="phone">
+
+                <img
+                src="splash.jpg"
+                alt="SkillSwap App Splash Screen">
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =================================
+     TRUST BAR
+================================= -->
+
+<section class="trust-bar">
+
+    <div class="trust-container">
+
+        <div class="trust-item">
+
+            <span class="trust-icon">
+                🛡️
+            </span>
+
+            Safety Focused
+
+        </div>
+
+
+        <div class="trust-item">
+
+            <span class="trust-icon">
+                🤝
+            </span>
+
+            Student Community
+
+        </div>
+
+
+        <div class="trust-item">
+
+            <span class="trust-icon">
+                📚
+            </span>
+
+            Knowledge Sharing
+
+        </div>
+
+
+        <div class="trust-item">
+
+            <span class="trust-icon">
+                🌱
+            </span>
+
+            Grow Together
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =================================
+     FEATURES
+================================= -->
+
+<section
+class="section features"
+id="features">
+
+    <div class="section-title reveal">
+
+        <small>
+            Why SkillSwap?
+        </small>
+
+        <h2>
+
+            A Better Way To Learn Together
+
+        </h2>
+
+        <p>
+
+            Every student has something valuable to teach and
+            something new to learn.
+
+        </p>
+
+    </div>
+
+
+
+    <div class="feature-grid">
+
+
+        <div class="feature-card reveal">
+
+            <div class="feature-icon">
+                🔍
+            </div>
+
+            <h3>
+                Discover Skills
+            </h3>
+
+            <p>
+
+                Find people based on skills, interests,
+                names or User IDs and discover new
+                learning opportunities.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="feature-card reveal">
+
+            <div class="feature-icon">
+                🤝
+            </div>
+
+            <h3>
+                Skill Exchange
+            </h3>
+
+            <p>
+
+                Share what you know and connect with
+                people who can help you learn something new.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="feature-card reveal">
+
+            <div class="feature-icon">
+                💬
+            </div>
+
+            <h3>
+                Communicate
+            </h3>
+
+            <p>
+
+                Connect with other students,
+                discuss skills and exchange ideas
+                respectfully.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="feature-card reveal">
+
+            <div class="feature-icon">
+                👤
+            </div>
+
+            <h3>
+                Build Your Profile
+            </h3>
+
+            <p>
+
+                Showcase your skills,
+                learning interests and
+                professional information.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="feature-card reveal">
+
+            <div class="feature-icon">
+                🔔
+            </div>
+
+            <h3>
+                Stay Connected
+            </h3>
+
+            <p>
+
+                Keep track of connections,
+                messages and important
+                activities.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="feature-card reveal">
+
+            <div class="feature-icon">
+                🌱
+            </div>
+
+            <h3>
+                Grow Together
+            </h3>
+
+            <p>
+
+                Learning becomes more powerful
+                when knowledge is shared between
+                people.
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =================================
+     APP SCREENSHOTS
+================================= -->
+
+<section
+class="section screenshots"
+id="screens">
+
+    <div class="section-title reveal">
+
+        <small>
+            Inside SkillSwap
+        </small>
+
+        <h2>
+            Explore The Experience
+        </h2>
+
+        <p>
+
+            A simple and modern experience designed
+            for students to learn, connect and grow.
+
+        </p>
+
+    </div>
+
+
+
+    <div class="screenshots-container">
+
+
+        <!-- WELCOME -->
+
+        <div class="screen-card reveal">
+
+            <img
+            src="welcome.jpg"
+            alt="SkillSwap Welcome Screen">
+
+            <h3>
+                Welcome
+            </h3>
+
+            <p>
+                Understand the SkillSwap community
+                before joining.
+            </p>
+
+        </div>
+
+
+
+        <!-- DISCOVER -->
+
+        <div class="screen-card reveal">
+
+            <img
+            src="discover.jpg"
+            alt="Discover Skills">
+
+            <h3>
+                Discover Skills
+            </h3>
+
+            <p>
+                Find your perfect skill partner.
+            </p>
+
+        </div>
+
+
+
+        <!-- PROFILE -->
+
+        <div class="screen-card reveal">
+
+            <img
+            src="profile.jpg"
+            alt="SkillSwap Profile">
+
+            <h3>
+                Your Profile
+            </h3>
+
+            <p>
+                Showcase your skills and connections.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =================================
+     SAFETY
+================================= -->
+
+<section
+class="section safety-section"
+id="safety">
+
+    <div class="safety-container">
+
+
+        <div class="safety-image reveal">
+
+            <img
+            src="safety.jpg"
+            alt="SkillSwap Safety and Report System">
+
+        </div>
+
+
+
+        <div class="safety-content reveal">
+
+            <small
+            style="
+                color:#168a4b;
+                font-weight:800;
+                letter-spacing:2px;
+            ">
+
+                COMMUNITY SAFETY
+
+            </small>
+
+
+            <h2>
+
+                Built With Safety In Mind
+
+            </h2>
+
+
+            <p>
+
+                SkillSwap is designed to encourage positive,
+                respectful and meaningful interactions.
+                Users have access to reporting options when
+                inappropriate behaviour occurs.
+
+            </p>
+
+
+            <ul class="safety-list">
+
+
+                <li>
+
+                    <span class="check">
+                        ✓
+                    </span>
+
+                    User reporting options
+
+                </li>
+
+
+                <li>
+
+                    <span class="check">
+                        ✓
+                    </span>
+
+                    Community safety focused
+
+                </li>
+
+
+                <li>
+
+                    <span class="check">
+                        ✓
+                    </span>
+
+                    Account management controls
+
+                </li>
+
+
+                <li>
+
+                    <span class="check">
+                        ✓
+                    </span>
+
+                    Respectful learning environment
+
+                </li>
+
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =================================
+     HOW IT WORKS
+================================= -->
+
+<section class="section how-it-works">
+
+    <div class="section-title reveal">
+
+        <small>
+            Simple Process
+        </small>
+
+        <h2>
+            How SkillSwap Works
+        </h2>
+
+        <p>
+            Start your learning journey in just a few steps.
+        </p>
+
+    </div>
+
+
+    <div class="steps">
+
+
+        <div class="step reveal">
+
+            <div class="step-number">
+                1
+            </div>
+
+            <h3>
+                Create Profile
+            </h3>
+
+            <p>
+
+                Add the skills you can teach
+                and the skills you want to learn.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="step reveal">
+
+            <div class="step-number">
+                2
+            </div>
+
+            <h3>
+                Discover People
+            </h3>
+
+            <p>
+
+                Search and find people with
+                skills that match your interests.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="step reveal">
+
+            <div class="step-number">
+                3
+            </div>
+
+            <h3>
+                Learn Together
+            </h3>
+
+            <p>
+
+                Connect, communicate and
+                exchange knowledge.
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =================================
+     DOWNLOAD
+================================= -->
+
+<section
+class="download"
+id="download">
+
+
+    <div class="download-content">
+
+
+        <h2>
+
+            Ready To Start Your Skill Journey?
+
+        </h2>
+
+
+        <p>
+
+            Download SkillSwap and start discovering
+            new skills, connecting with learners and
+            growing together.
+
+        </p>
+
+
+        <a
+        href="https://github.com/ramachandranragu87-dev/skillswap/releases/download/v1.0/app-release.apk"
+        class="download-button">
+
+            📱 Download SkillSwap APK
+
+        </a>
+
+
+        <div class="apk-info">
+
+            Android APK • Free Download • Version 1.0
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =================================
+     FOOTER
+================================= -->
+
+<footer>
+
+    <div class="footer-brand">
+
+        ↔ SkillSwap
+
+    </div>
+
+
+    <p>
+
+        Connect. Learn. Grow Together.
+
+    </p>
+
+
+    <p>
+
+        © 2026 SkillSwap. All rights reserved.
+
+    </p>
+
+</footer>
+
+
+
+<!-- =================================
+     JAVASCRIPT
+================================= -->
+
+<script>
+
+
+    /* ================================
+       SCROLL REVEAL
+    ================================= */
+
+    function revealOnScroll() {
+
+        const elements =
+            document.querySelectorAll(".reveal");
+
+
+        elements.forEach(function(element) {
+
+            const position =
+                element.getBoundingClientRect().top;
+
+
+            const screenHeight =
+                window.innerHeight;
+
+
+            if (
+                position <
+                screenHeight - 100
+            ) {
+
+                element.classList.add("active");
+
+            }
+
+        });
+
+    }
+
+
+    window.addEventListener(
+        "scroll",
+        revealOnScroll
+    );
+
+
+    window.addEventListener(
+        "load",
+        revealOnScroll
+    );
+
+
+
+    /* ================================
+       DOWNLOAD CLICK TRACKING
+    ================================= */
+
+    const downloadLinks =
+        document.querySelectorAll(
+            'a[href*=".apk"]'
+        );
+
+
+    downloadLinks.forEach(function(button) {
+
+        button.addEventListener(
+            "click",
+            function() {
+
+                console.log(
+                    "SkillSwap APK download clicked"
+                );
+
+            }
+        );
+
+    });
+
+
+</script>
+
+
+</body>
+</html>
